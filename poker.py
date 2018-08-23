@@ -33,10 +33,8 @@ def test_new_deck():
 
 
 def shuffled(deck):
-    # A really bad shuffle function
     re_ordered = deck.copy()
-    # Reverse the order
-    re_ordered.reverse()
+    random.shuffle(re_ordered)
     return re_ordered
 
 
@@ -47,7 +45,7 @@ def test_shuffled():
     for i in range(1000):
         deck = make_new_deck()
         shuffled_deck = shuffled(deck)
-        # Compare this deck to all previous ones
+        # Compare this deck to all previous ones. Do any match?
         assert shuffled_deck not in decks
         decks.append(shuffled_deck)
 
