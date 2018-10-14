@@ -1,13 +1,10 @@
 """ Make poker hands
 """
 
-
 import random
-
 
 VALUES = '2 3 4 5 6 7 8 9 10 Jack Queen King Ace'.split()
 SUITS = 'Hearts Diamonds Clubs Spades'.split()
-
 
 def make_new_deck():
     cards = []
@@ -16,7 +13,6 @@ def make_new_deck():
             card = value + ' of ' + suit
             cards.append(card)
     return cards
-
 
 def test_new_deck():
     # We will test the `make_new_deck` function
@@ -31,12 +27,10 @@ def test_new_deck():
     # Make sure all cards are unique
     assert len(set(deck)) == len(deck)
 
-
 def shuffled(deck):
     re_ordered = deck.copy()
     random.shuffle(re_ordered)
     return re_ordered
-
 
 def test_shuffled():
     decks = []
@@ -48,7 +42,6 @@ def test_shuffled():
         # Compare this deck to all previous ones. Do any match?
         assert shuffled_deck not in decks
         decks.append(shuffled_deck)
-
 
 if __name__ == "__main__":
     print("Running tests")
